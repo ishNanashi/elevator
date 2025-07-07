@@ -27,7 +27,6 @@ This was tested on both Arch Linux + KDE, and Windows 11, and worked on both. I 
 - Fault detection/error-handling
 - Cancelling a request (eg, pushing the button again)
 - Sophisticated scheduling (eg, stopping at nearest floors, instead of just the order the elevator was summoned in)
-- Updating the travel-path in real-time.
 - Unit testing :(
 
 # Running the program

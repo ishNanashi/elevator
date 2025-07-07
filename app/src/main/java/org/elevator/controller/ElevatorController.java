@@ -90,10 +90,14 @@ public class ElevatorController {
   public void updateView() {
     new Thread(() -> {
       while (true) {
+        this.view.setQueueLabel("Current Queue is: " + this.model.printQueue());
+      }
+    }).start();
+
+    new Thread(() -> {
+      while (true) {
         try {
           if (!this.model.queueIsEmpty()) {
-            // The queue could probably have a separate thread to avoid the sleeps but w/e.
-            this.view.setQueueLabel("Current Queue is: " + this.model.printQueue());
             System.out.println(this.model.printQueue());
             Thread.sleep(this.model.getWaitTime()); // Wait on a given floor for some amount of time before moving again.
             this.travelToFloor(); 
